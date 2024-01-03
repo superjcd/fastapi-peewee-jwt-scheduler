@@ -1,12 +1,13 @@
 from fastapi import APIRouter, Depends
 
-from app.utils.deps import get_db
+from app.middlewares.deps import get_db
 from app.models.user import User
 from app.providers.database import redis_client
 from app.utils.auth import hashing
 
 router = APIRouter(
-    prefix="/demo"
+    prefix="/demo",
+    dependencies=[Depends(get_db)]
 )
 
 
@@ -14,8 +15,7 @@ router = APIRouter(
 def index():
     return "demo index"
 
-
-@router.get("/db_test", dependencies=[Depends(get_db)])
+@router.get("/db_test")
 def db_test():
     password = hashing.get_password_hash("123456")
     user = User.create(username='fake_user_by_db_test_1', password=password)

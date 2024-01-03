@@ -1,7 +1,7 @@
 from fastapi import APIRouter
-from app.handlers.api import demo
-from app.handlers.api import auth
-from app.handlers.api import users
+from app.handlers import demo
+from app.handlers import auth
+from app.handlers import users
 
 api_router = APIRouter()
 
