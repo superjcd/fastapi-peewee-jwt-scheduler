@@ -2,9 +2,21 @@
 
 
 ## 项目结构
-```
+### 顶层结构
+- app:  应用
+- bootstrap: 项目启动代码
+- config: 配置文件
+- jobs: 定时任务
+- main.py： app入口
+- shceduler.py: 任务调度入口
 
-```
+### app结构
+- handlers: handlers
+- middlewares： 中间件
+- models: 数据库模型
+- providers: 第三方支持
+- routes： 路由
+- schemas: 各种request和reponse的schema
 
 ## 集成的模块
 
@@ -62,12 +74,4 @@ uvicorn main:app --host 0.0.0.0 --port 8080
 python scheduler.py 
 ```
 
-关于部署部分，参见我的另一篇文章 [fastapi部署](https://www.kxler.com/2022/10/21/fastapi-deployment-venv-gunicorn-service/)
 
-## 参考
-
-[FastAPI官方中文文档](https://fastapi.tiangolo.com/zh/)
-
-FastAPI作者的全栈项目脚手架 [full-stack-fastapi-postgresql](https://github.com/tiangolo/full-stack-fastapi-postgresql)
-
-代码结构组织风格参考 [Laravel框架](https://github.com/laravel/laravel)
