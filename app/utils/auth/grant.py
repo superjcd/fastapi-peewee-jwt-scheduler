@@ -2,9 +2,9 @@ from datetime import timedelta
 
 from app.exceptions.exception import AuthenticationError
 from app.models.user import User
-from app.services.auth import jwt_helper, hashing, random_code_verifier
-from app.services.auth.oauth2_schema import OAuth2CellphoneRequest, OAuth2PasswordRequest
-from app.support.helper import alphanumeric_random
+from app.utils.auth import jwt_helper, hashing, random_code_verifier
+from app.utils.auth.oauth2_schema import OAuth2CellphoneRequest, OAuth2PasswordRequest
+from app.utils.helper import alphanumeric_random
 from config.auth import settings
 
 

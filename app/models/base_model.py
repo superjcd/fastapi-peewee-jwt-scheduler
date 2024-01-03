@@ -1,6 +1,6 @@
 import datetime
 
-from peewee import CharField, DateTimeField, Model, SQL
+from peewee import DateTimeField, Model, SQL
 
 from app.providers.database import db
 

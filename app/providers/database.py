@@ -2,8 +2,6 @@ from contextvars import ContextVar
 
 import redis
 from peewee import _ConnectionState, MySQLDatabase
-from playhouse.pool import PooledMySQLDatabase
-
 from config.database import settings, redis_settings
 
 db_state_default = {"closed": None, "conn": None, "ctx": None, "transactions": None}
@@ -37,14 +35,10 @@ db = MySQLDatabase(
 
 db._state = PeeweeConnectionState()
 
-# redis
-# redis_client = redis.Redis(
-#     host=redis_settings.REDIS_HOST,
-#     port=redis_settings.REDIS_PORT,
-#     db=redis_settings.REDIS_DB,
-#     password=redis_settings.REDIS_PASSWORD,
-#     decode_responses=True
-# )
+# TODO: 
+# here buil create table and admin user
+
+
 redis_pool = redis.ConnectionPool(
     host=redis_settings.REDIS_HOST,
     port=redis_settings.REDIS_PORT,

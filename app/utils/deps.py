@@ -5,7 +5,7 @@ from app.exceptions.exception import AuthenticationError
 from app.models.user import User
 from app.providers import database
 from app.providers.database import reset_db_state
-from app.services.auth import jwt_helper
+from app.utils.auth import jwt_helper
 from jose import jwt
 
 oauth2_token_schema = OAuth2PasswordBearer(

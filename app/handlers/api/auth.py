@@ -1,18 +1,17 @@
 from fastapi import APIRouter, Depends, Body
 from starlette.responses import JSONResponse
 
-from app.http.deps import get_db
+from app.utils.deps import get_db
 from app.schemas.auth import Token
-from app.services.auth import random_code_verifier
-from app.services.auth.grant import PasswordGrant, CellphoneGrant
-from app.services.auth.oauth2_schema import OAuth2PasswordRequest, OAuth2CellphoneRequest
-from app.services.sms import sms_sender
-from app.support.helper import is_chinese_cellphone
+from app.utils.auth import random_code_verifier
+from app.utils.auth.grant import PasswordGrant, CellphoneGrant
+from app.utils.auth.oauth2_schema import OAuth2PasswordRequest, OAuth2CellphoneRequest
+from app.utils.sms import sms_sender
+from app.utils.helper import is_chinese_cellphone
 
 router = APIRouter(
     prefix="/auth"
 )
-
 
 @router.post("/token", response_model=Token, dependencies=[Depends(get_db)])
 def token(request_data: OAuth2PasswordRequest):

@@ -1,7 +1,7 @@
 from fastapi import APIRouter, Depends
 
-from app.http import deps
-from app.http.deps import get_db
+from app.utils import deps
+from app.utils.deps import get_db
 from app.models.user import User
 from app.schemas.user import UserDetail
 

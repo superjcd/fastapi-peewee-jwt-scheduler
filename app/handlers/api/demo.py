@@ -1,9 +1,9 @@
 from fastapi import APIRouter, Depends
 
-from app.http.deps import get_db
+from app.utils.deps import get_db
 from app.models.user import User
 from app.providers.database import redis_client
-from app.services.auth import hashing
+from app.utils.auth import hashing
 
 router = APIRouter(
     prefix="/demo"

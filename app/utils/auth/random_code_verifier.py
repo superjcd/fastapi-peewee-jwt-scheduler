@@ -1,5 +1,5 @@
 from app.providers.database import redis_client
-from app.support.helper import numeric_random
+from app.utils.helper import numeric_random
 from config.config import settings
 
 
